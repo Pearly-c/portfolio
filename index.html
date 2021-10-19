@@ -9,7 +9,7 @@
         <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
         
         <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
         
         <!--==================== CSS ====================-->
         <link rel="stylesheet" href="assets/css/styles.css">
@@ -418,13 +418,67 @@
                 <h2 class="section__title">Portfolio</h2>
                 <span class="section__subtitle">Most recent work</span>
 
-                <div class="portfolio__container container">
-                    <div>
+                <div class="portfolio__container container swiper-container">
+                    <div class="swiper-wrapper">
                         <!--==================== PORTFOLIO 1 ====================--> 
-                        <div class="portfolio__content grid">
-                            <img src="" alt="" class="portfolio__img">
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/empower.png" alt="" class="portfolio__img">
+
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Modern Website</h3>
+                                <p class="portfolio__description">Website adaptable to all devices,
+                                    with ui component and animated interactions.
+                                </p>
+                                <a href="" class="button button--flex button--small portfolio__button">
+                                    Demo
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--==================== PORTFOLIO 2 ====================--> 
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/meridian.png" alt="" class="portfolio__img">
+
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Modern Website</h3>
+                                <p class="portfolio__description">Website adaptable to all devices,
+                                    with ui component and animated interactions.
+                                </p>
+                                <a href="" class="button button--flex button--small portfolio__button">
+                                    Demo
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--==================== PORTFOLIO 3 ====================--> 
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/empower.png" alt="" class="portfolio__img">
+
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Modern Website</h3>
+                                <p class="portfolio__description">Website adaptable to all devices,
+                                    with ui component and animated interactions.
+                                </p>
+                                <a href="" class="button button--flex button--small portfolio__button">
+                                    Demo
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- ADD ARROWS -->
+                    <div class="swiper-button-next">
+                        <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+                    </div>
+
+                    <!-- ADD PAGINATION -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </section>
 
@@ -442,8 +496,41 @@
 
             <!--==================== CONTACT ME ====================-->
             <section class="contact section" id="contact">
+                <h2 class="section__title">Contact Me</h2>
+                <span class="section__subtitle">Get in touch </span>
 
+                <div class="contact__container container grid">
+                   <div>
+                       <div class="contact__information">
+                           <i class="uil uil-phone contact__icon"></i>
 
+                           <div>
+                               <h3 class="contact__title">Call Me</h3>
+                               <span class="contact__subtitle">+234-8152-583-776</span>
+                           </div>
+                       </div>
+
+                       <div class="contact__information">
+                            <i class="uil uil-envelope contact__icon"></i>
+
+                            <div>
+                                <h3 class="contact__title">Email</h3>
+                                <span class="contact__subtitle">pearlchristian6@gmail.com</span>
+                            </div>
+                        </div> 
+                        
+                        <div class="contact__information">
+                            <i class="uil uil-map-marker contact__icon"></i>
+ 
+                            <div>
+                                <h3 class="contact__title">Call Me</h3>
+                                <span class="contact__subtitle">Nigeria</span>
+                            </div>
+                        </div>
+                   </div> 
+
+                   
+                </div>
             </section>
         </main>
 
@@ -457,7 +544,7 @@
         
 
         <!--==================== SWIPER JS ====================-->
-        <script src=""></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
 
         <!--==================== MAIN JS ====================-->
         <script src="assets/js/main.js"></script>
