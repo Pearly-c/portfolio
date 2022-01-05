@@ -194,6 +194,12 @@
 
                                 <div class="skills__data">
                                     <div class="skills__titles">
+                                        <h3 class="skills__name">ReactJS</h3>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <div class="skills__titles">
                                         <h3 class="skills__name">Git version control/Github</h3>
                                     </div>
                                 </div>
@@ -451,21 +457,21 @@
                        <div class="contact__inputs grid">
                            <div class="contact__content">
                                <label for="" class="contact__label">Name</label>
-                               <input type="text" class="contact__input">
+                               <input type="text" class="contact__input name">
                            </div>
 
                             <div class="contact__content">
                                 <label for="" class="contact__label">Email</label>
-                                <input type="email" class="contact__input">
+                                <input type="email" class="contact__input email">
                             </div>
 
                             <div class="contact__content">
                                 <label for="" class="contact__label">Message</label>
-                                <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                                <textarea name="" id="" cols="0" rows="7" class="contact__input message"></textarea>
                             </div>
 
                             <div>
-                                <a href="" class="button button--flex">
+                                <a href="" class="button button--flex submit">
                                     Send Message
                                     <i class="uil uil-message button__icon"></i>
                                 </a>
@@ -478,53 +484,6 @@
         </main>
 
         <!--==================== FOOTER ====================-->
-        <!-- <footer class="footer">
-            <div class="footer__bg">
-                <div class="footer__container container grid">
-                    <div>
-                        <h1 class="footer__title">Pearl</h1>
-                        <span class="footer__subtitle">Frontend developer</span>
-                    </div>
-
-                    <ul class="footer__links">
-                        <li>
-                            <a href="#services" class="footer__link">Services</a>
-                        </li>
-                        <li>
-                            <a href="#portfolio" class="footer__link">POrtfolio</a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="footer__link">Contactme</a>
-                        </li>
-                    </ul>
-
-                    <div class="footer__socials">
-                        <a href="" target="_blank" class="footer__social"> 
-                            <i class="uil uil-facebook-f"></i>
-                        </a>
-
-                        <a href="" target="_blank" class="footer__social"> 
-                            <i class="uil uil-instagram"></i>
-                        </a>
-
-                        <a href="" target="_blank" class="footer__social"> 
-                            <i class="uil uil-twitter-alt"></i>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/pearl-christian" target="_blank" class="footer__social">
-                            <i class="uim uim-linkedin-alt"></i>
-                        </a>
-
-                        <a href="https://github.com/Pearly-c" target="_blank" class="footer__social">
-                            <i class="uil uil-github-alt"></i>
-                        </a>
-
-                    </div>
-                </div>
-
-                <p class="footer__copy">&#169; Pearl. All right reserved</p>
-            </div>   
-        </footer> -->
         
         <footer class="footer">
             <p class="footer__title nav__logo">PC</p>
@@ -556,8 +515,88 @@
         <!--==================== SWIPER JS ====================-->
         <script src="assets/js/swiper-bundle.min.js"></script>
 
-        <!--==================== MAIN JS ====================-->
-        <script src="assets/js/main.js"></script>
+           <!--==================== MAIN JS ====================-->
+           <script src="assets/js/main.js"></script>
 
+        <!--==================== SWEET ALERT JS ====================-->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <!--==================== EMAIL JS ====================-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+            emailjs.init("user_TcCVKSYkHjQbwVl8DjvT3");
+            })();
+        </script>
+
+        <script>
+            // User ID user_TcCVKSYkHjQbwVl8DjvT3
+            // Access Token b2f57fdc778a59fa5814b222c4e96a5b
+            
+            function validate(){
+                let name = document.querySelector(".name");
+                let email = document.querySelector(".email");
+                let msg = document.querySelector(".message");
+                let submit = document.querySelector(".submit");
+
+                submit.addEventListener("click", (e)=>{
+                    e.preventDefault()
+
+                    if(name.value == "" || email.value == "" || msg.value == ""){
+                        emptyInput();
+                    }
+                    else{
+                        // if(sendMail()){
+                        //     success()
+                        // }
+                        sendMail(name.value, email.value, msg.value)
+                        success();
+                        console.log("email sent");
+                    }
+
+                })
+            }
+            validate()
+
+            function sendMail(name, email, msg){
+                emailjs.send("service_6mtgsa8","template_sudg1qc",{
+                    from_name: name,
+                    to_name: "Pearl",
+                    message: msg,
+                    reply_to: email,
+                });
+            }
+
+            function success(){
+                swal({
+                    title: "Good job!",
+                    text: "Message sent successfully!",
+                    icon: "success",
+                    button: "OK!",
+                });
+            }
+            success()
+
+            function emptyInput(){
+                swal({
+                    title: "Oops...!",
+                    text: "Input fields are required!",
+                    icon: "error",
+                    button: "OK!",
+                });
+            }
+            emptyInput()
+
+            /*function error(){
+                swal({
+                    title: "Oops...!",
+                    text: "Something went wrong, message could not be sent!",
+                    icon: "error",
+                    button: "OK!",
+                });
+            }
+            error()
+            */
+        </script>
     </body>
 </html>
