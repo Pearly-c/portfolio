@@ -522,16 +522,17 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <!--==================== EMAIL JS ====================-->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
         <script type="text/javascript">
             (function() {
             emailjs.init("user_TcCVKSYkHjQbwVl8DjvT3");
             })();
-        </script>
+        </script> -->
 
         <script>
             // User ID user_TcCVKSYkHjQbwVl8DjvT3
             // Access Token b2f57fdc778a59fa5814b222c4e96a5b
+            
             
             function validate(){
                 let name = document.querySelector(".name");
@@ -539,7 +540,7 @@
                 let msg = document.querySelector(".message");
                 let submit = document.querySelector(".submit");
 
-                submit.addEventListener("click", (e)=>{
+                submit.addEventListener("click", e =>{
                     e.preventDefault()
 
                     if(name.value == "" || email.value == "" || msg.value == ""){
