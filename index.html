@@ -157,7 +157,7 @@
                         </p>
 
                         <div class="about__buttons">
-                            <a download="" href="assets/pdf/PEARL-CHRISTIAN-CV.pdf" target="_blank" class="button button--flex">
+                            <a download="" href="https://drive.google.com/file/d/1bkw3tENh6YrMB4QLZ4YWhk7vMO3LxIeA/view?usp=sharing" target="_blank" class="button button--flex">
                                 View CV<i class="uil uil-arrow-right button__icon"></i>
                             </a>
                         </div>
@@ -552,6 +552,9 @@
                         sendMail(name.value, email.value, msg.value)
                         success();
                         console.log("email sent");
+                        name.value = "";
+                        email.value = "";
+                        msg.value = "";
                     }
 
                 })
